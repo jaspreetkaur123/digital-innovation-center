@@ -20,7 +20,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import dicLogo from "@/assets/dic-logo.png";
+import dicMark from "@/assets/dic-mark.png";
 import portfolioFintech from "@/assets/portfolio-fintech.jpg";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
 import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
@@ -211,7 +211,7 @@ function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#home" className="flex items-center gap-3">
-          <img src={dicLogo} alt="DIC logo" className="h-10 w-10" width={40} height={40} />
+          <img src={dicMark} alt="DIC logo" className="h-10 w-10" width={40} height={40} />
           <span className="hidden flex-col leading-tight sm:flex">
             <span className="font-display text-sm font-bold tracking-wide">
               DIGITAL INNOVATION CENTER
@@ -331,13 +331,19 @@ function Hero() {
 
         <div className="reveal is-visible relative flex justify-center lg:justify-end">
           <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-br from-primary/15 via-secondary/15 to-accent/15 blur-3xl" />
-          <img
-            src={dicLogo}
-            alt="Digital Innovation Center — Ideas to Digital Reality"
-            width={1024}
-            height={1024}
-            className="w-full max-w-md rounded-3xl drop-shadow-2xl sm:max-w-lg"
-          />
+          <div className="flex flex-col items-center text-center">
+            <img
+              src={dicMark}
+              alt="Digital Innovation Center mark"
+              width={760}
+              height={760}
+              className="w-full max-w-sm drop-shadow-2xl sm:max-w-md"
+            />
+            <p className="mt-6 font-display text-2xl font-bold tracking-wide sm:text-3xl">
+              DIGITAL INNOVATION CENTER
+            </p>
+            <p className="mt-2 text-lg text-muted-foreground italic">Ideas to Digital Reality</p>
+          </div>
         </div>
       </div>
     </section>
@@ -619,7 +625,7 @@ function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 text-center sm:px-6 md:flex-row md:justify-between md:text-left">
         <a href="#home" className="flex flex-col items-center gap-3 md:flex-row">
-          <img src={dicLogo} alt="DIC logo" width={1024} height={1024} className="h-14 w-14" />
+          <img src={dicMark} alt="DIC logo" width={760} height={760} className="h-14 w-14" />
           <div>
             <p className="font-display font-bold tracking-wide">DIGITAL INNOVATION CENTER</p>
             <p className="text-sm text-muted-foreground italic">Ideas to Digital Reality</p>
