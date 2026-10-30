@@ -21,12 +21,16 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import dicMark from "@/assets/dic-mark.png";
+import dic_logo from "@/assets/dic-logo.png";
 import portfolioFintech from "@/assets/portfolio-fintech.jpg";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
 import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
 import portfolioCloud from "@/assets/portfolio-cloud.jpg";
 import webAppsImage from "@/assets/web_apps.png";
+import aiToolsImage from "@/assets/aiToolsImage.png";
+import mobileAppImage from "@/assets/mobileAppImage.png";
+import digitalPresenceImage from "@/assets/digitalPresenceImage.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
