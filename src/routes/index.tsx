@@ -8,7 +8,7 @@ import {
   Clock,
   Cloud,
   Code2,
-  
+  Handshake,
   Mail,
   MapPin,
   Menu,
@@ -21,15 +21,15 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import dic_logo from "@/assets/dic-logo.png";
-import portfolioFintech from "@/assets/portfolio-fintech.jpg";
+import dic_logo from "@/assets/dic.png";
+import portfolioAFR from "@/assets/portfolio-AFR.png";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
-import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
-import portfolioCloud from "@/assets/portfolio-cloud.jpg";
+/* import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
+import portfolioCloud from "@/assets/portfolio-cloud.jpg"; */
 import webAppsImage from "@/assets/web_apps.png";
-import aiToolsImage from "@/assets/aiToolsImage.png";
-import mobileAppImage from "@/assets/mobileAppImage.png";
-import digitalPresenceImage from "@/assets/digitalPresenceImage.png";
+import AIToolsImage from "@/assets/Ai_tools.png";
+import mobileAppImage from "@/assets/mobile_app.png";
+import digiPresenceImage from "@/assets/digi_presence.png";
 
 
 export const Route = createFileRoute("/")({
@@ -93,13 +93,13 @@ const SERVICES = [
     color: "text-primary",
     bg: "bg-primary/10",
   },
-  /* {
-    icon: DigiPresence,
+  {
+    icon: Handshake,
     title: "Transforming offline businesses to online ",
     text: "Technology strategy, security audits and managed support that keeps you running.",
     color: "text-secondary",
     bg: "bg-secondary/10",
-  }, */
+  }, 
 ];
 
 const VALUES = [
@@ -122,10 +122,12 @@ const VALUES = [
 
 const PROJECTS = [
   {
-    image: portfolioFintech,
-    title: "FinSight Analytics Platform",
-    category: "Fintech · Web Platform",
-    text: "Real-time trading analytics dashboard processing 2M+ daily events for a brokerage firm.",
+    image: portfolioAFR,
+    title: "Amrit Family Rasoi",
+    category: "North Indian Restaurant",
+    text: "Amrit Family Rasoi is a family-friendly food destination serving delicious, freshly prepared meals made with love and traditional Indian flavours. We believe in bringing families together through tasty, hygienic, and affordable food. Every dish is prepared with care, offering the authentic taste of homemade cooking and the warmth of a family kitchenOur motto: Ghar Jaisa Swad, Pyaar Ke Saath! .",
+
+
     tags: ["React", "Data Viz", "WebSockets"],
   },
   {
@@ -135,7 +137,7 @@ const PROJECTS = [
     text: "HIPAA-ready telemedicine app with video consults, e-prescriptions and 40k+ active patients.",
     tags: ["Flutter", "WebRTC", "HIPAA"],
   },
-  {
+  /* {
     image: portfolioEcommerce,
     title: "UrbanCart Commerce Suite",
     category: "Retail · E-commerce",
@@ -148,14 +150,14 @@ const PROJECTS = [
     category: "Enterprise · Cloud & AI",
     text: "Multi-cloud observability control plane with AI anomaly alerts across 3 regions.",
     tags: ["Kubernetes", "AI Ops", "Multi-cloud"],
-  },
+  }, */
 ];
 
 const HERO_SLIDES = [
-  { src: digitalPresenceImage, alt: "Digital transformation for retail businesses" },
+  { src: digiPresenceImage, alt: "Digital transformation for retail businesses" },
   { src: mobileAppImage, alt: "Custom mobile app development" },
   { src: webAppsImage, alt: "Web application development" },
-  { src: aiToolsImage, alt: "AI solutions and integrated workspace tools" },
+  { src: AIToolsImage, alt: "AI solutions and integrated workspace tools" },
 ];
 
 function useReveal() {
