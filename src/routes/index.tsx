@@ -6,14 +6,11 @@ import {
   BrainCircuit,
   CheckCircle2,
   Clock,
-  Cloud,
   Code2,
-  
   Mail,
   MapPin,
   Menu,
   Palette,
-  Phone,
   Send,
   ShieldCheck,
   Smartphone,
@@ -22,14 +19,15 @@ import {
   Zap,
 } from "lucide-react";
 import dic_logo from "@/assets/dic-logo.png";
-import portfolioFintech from "@/assets/portfolio-fintech.jpg";
+import restaurantAsset from "@/assets/restaurant-website.jpg.asset.json";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
 import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
 import portfolioCloud from "@/assets/portfolio-cloud.jpg";
 import webAppsImage from "@/assets/web_apps.png";
-import aiToolsImage from "@/assets/aiToolsImage.png";
-import mobileAppImage from "@/assets/mobileAppImage.png";
-import digitalPresenceImage from "@/assets/digitalPresenceImage.png";
+import aiToolsImage from "@/assets/Ai_tools.png";
+import mobileAppImage from "@/assets/mobile_app.png";
+import digitalPresenceImage from "@/assets/digital_presence.png";
+
 
 
 export const Route = createFileRoute("/")({
@@ -122,11 +120,11 @@ const VALUES = [
 
 const PROJECTS = [
   {
-    image: portfolioFintech,
-    title: "FinSight Analytics Platform",
-    category: "Fintech · Web Platform",
-    text: "Real-time trading analytics dashboard processing 2M+ daily events for a brokerage firm.",
-    tags: ["React", "Data Viz", "WebSockets"],
+    image: restaurantAsset.url,
+    title: "Amrit Family Rasoi — Restaurant Website",
+    category: "Restaurants · Web Platform",
+    text: "A warm, appetizing online home for a family restaurant — menu, story and reservations, all in one place.",
+    tags: ["React", "Web Design", "Restaurants"],
   },
   {
     image: portfolioHealth,
