@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  ArrowLeft,
   ArrowRight,
   BrainCircuit,
   CheckCircle2,
   Clock,
   Cloud,
   Code2,
-  LifeBuoy,
+  
   Mail,
   MapPin,
   Menu,
@@ -20,22 +21,26 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import dicMark from "@/assets/dic-mark.png";
-import portfolioFintech from "@/assets/portfolio-fintech.jpg";
+import dic_logo from "@/assets/dic.png";
+import aiToolsImage from "@/assets/Ai_tools.png";
+import digitalPresenceImage from "@/assets/digi_presence.png";
+import mobileAppImage from "@/assets/mobile_app.png";
+import portfolioFintech from "@/assets/portfolio-AFR.png";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
 import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
 import portfolioCloud from "@/assets/portfolio-cloud.jpg";
+import webAppsImage from "@/assets/web_apps.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Digital Innovation Center (DIC) | IT Solutions — Ideas to Digital Reality",
+        title: "Digital Innovation Center  | IT Solutions — Ideas to Digital Reality",
       },
       {
         name: "description",
         content:
-          "Digital Innovation Center (DIC) is a full-service IT solutions company building web platforms, mobile apps, cloud systems and AI-driven products. Ideas to Digital Reality.",
+          "Digital Innovation Center is a full-service IT solutions company building web platforms, mobile apps, cloud systems and AI-driven products. Ideas to Digital Reality.",
       },
       { property: "og:title", content: "Digital Innovation Center (DIC) | IT Solutions" },
       {
@@ -72,13 +77,7 @@ const SERVICES = [
     color: "text-secondary",
     bg: "bg-secondary/10",
   },
-  {
-    icon: Cloud,
-    title: "Cloud & DevOps",
-    text: "Cloud migration, infrastructure automation and 24/7 reliability engineering.",
-    color: "text-accent",
-    bg: "bg-accent/10",
-  },
+  
   {
     icon: Palette,
     title: "UI/UX Design",
@@ -93,13 +92,13 @@ const SERVICES = [
     color: "text-primary",
     bg: "bg-primary/10",
   },
-  {
-    icon: LifeBuoy,
-    title: "IT Consulting & Support",
+  /* {
+    icon: DigiPresence,
+    title: "Transforming offline businesses to online ",
     text: "Technology strategy, security audits and managed support that keeps you running.",
     color: "text-secondary",
     bg: "bg-secondary/10",
-  },
+  }, */
 ];
 
 const VALUES = [
@@ -122,7 +121,7 @@ const VALUES = [
 
 const PROJECTS = [
   {
-    image: portfolioFintech,
+    // image: Amrit,
     title: "FinSight Analytics Platform",
     category: "Fintech · Web Platform",
     text: "Real-time trading analytics dashboard processing 2M+ daily events for a brokerage firm.",
@@ -149,6 +148,13 @@ const PROJECTS = [
     text: "Multi-cloud observability control plane with AI anomaly alerts across 3 regions.",
     tags: ["Kubernetes", "AI Ops", "Multi-cloud"],
   },
+];
+
+const HERO_SLIDES = [
+  { src: digitalPresenceImage, alt: "Digital transformation for retail businesses" },
+  { src: mobileAppImage, alt: "Custom mobile app development" },
+  { src: webAppsImage, alt: "Web application development" },
+  { src: aiToolsImage, alt: "AI solutions and integrated workspace tools" },
 ];
 
 function useReveal() {
@@ -211,7 +217,7 @@ function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#home" className="flex items-center gap-3">
-          <img src={dicMark} alt="DIC logo" className="h-10 w-10" width={40} height={40} />
+          <img src={dic_logo} alt="DIC logo" className="h-10 w-10" width={40} height={40} />
           <span className="hidden flex-col leading-tight sm:flex">
             <span className="font-display text-sm font-bold tracking-wide">
               DIGITAL INNOVATION CENTER
@@ -281,6 +287,26 @@ function Header() {
 }
 
 function Hero() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % HERO_SLIDES.length);
+    }, 5000);
+
+    return () => window.clearInterval(intervalId);
+  }, [isPaused]);
+
+  const currentSlide = HERO_SLIDES[activeSlide];
+  if (!currentSlide) {
+    throw new Error("Active hero slide index is out of bounds");
+  }
+
   return (
     <section id="home" className="brand-glow relative scroll-mt-16 overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
@@ -292,7 +318,7 @@ function Hero() {
             Ideas to <span className="text-gradient">Digital Reality</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-            Digital Innovation Center (DIC) designs, builds and runs the technology
+            Digital Innovation Center designs, builds and runs the technology
             behind ambitious businesses — web platforms, mobile apps, cloud
             infrastructure and AI-driven products, delivered end to end.
           </p>
@@ -313,10 +339,10 @@ function Hero() {
           </div>
           <dl className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
             {[
-              ["120+", "Projects delivered"],
-              ["60+", "Happy clients"],
-              ["12", "Years of experience"],
-              ["15+", "Countries served"],
+              ["2+", "Projects delivered"],
+              ["2+", "Happy clients"],
+              ["9", "Years of experience"],
+              ["1+", "Countries served"],
             ].map(([value, label]) => (
               <div key={label}>
                 <dt className="sr-only">{label}</dt>
@@ -329,20 +355,63 @@ function Hero() {
           </dl>
         </div>
 
-        <div className="reveal is-visible relative flex justify-center lg:justify-end">
+        <div className="reveal is-visible relative flex justify-center">
           <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-br from-primary/15 via-secondary/15 to-accent/15 blur-3xl" />
-          <div className="flex flex-col items-center text-center">
-            <img
-              src={dicMark}
-              alt="Digital Innovation Center mark"
-              width={760}
-              height={760}
-              className="w-full max-w-sm drop-shadow-2xl sm:max-w-md"
-            />
-            <p className="mt-6 font-display text-2xl font-bold tracking-wide sm:text-3xl">
-              DIGITAL INNOVATION CENTER
-            </p>
-            <p className="mt-2 text-lg text-muted-foreground italic">Ideas to Digital Reality</p>
+          <div
+            className="relative w-full max-w-xl"
+            role="region"
+            aria-label="Featured services"
+            aria-roledescription="carousel"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onFocus={() => setIsPaused(true)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) {
+                setIsPaused(false);
+              }
+            }}
+          >
+            <div className="overflow-hidden rounded-2xl bg-card/60 shadow-2xl ring-1 ring-border/60">
+              <img
+                src={currentSlide.src}
+                alt={currentSlide.alt}
+                width={1366}
+                height={1366}
+                className="aspect-video w-full object-contain"
+              />
+            </div>
+            <button
+              type="button"
+              aria-label="Previous slide"
+              onClick={() =>
+                setActiveSlide((current) => (current - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)
+              }
+              className="absolute top-1/2 left-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-background/90 text-foreground shadow-lg transition-colors hover:bg-background"
+            >
+              <ArrowLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next slide"
+              onClick={() => setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)}
+              className="absolute top-1/2 right-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-background/90 text-foreground shadow-lg transition-colors hover:bg-background"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            <div className="mt-4 flex justify-center gap-2" aria-label="Choose a slide">
+              {HERO_SLIDES.map((slide, index) => (
+                <button
+                  key={slide.alt}
+                  type="button"
+                  aria-label={`Show slide ${index + 1}`}
+                  aria-current={activeSlide === index ? "true" : undefined}
+                  onClick={() => setActiveSlide(index)}
+                  className={`h-2.5 rounded-full transition-all ${
+                    activeSlide === index ? "w-7 bg-primary" : "w-2.5 bg-muted-foreground/40"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -362,7 +431,7 @@ function About() {
             Your partner for every step of the digital journey
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Founded in 2014, Digital Innovation Center is a full-service IT solutions
+            Founded in 2020, Digital Innovation Center is a full-service IT solutions
             company. We take products from a one-line idea to production reality —
             strategy, design, engineering and operations under one roof. Our
             multidisciplinary team has shipped solutions for fintech, healthcare,
@@ -427,8 +496,10 @@ function Portfolio() {
             Work we're proud of
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A selection of recent engagements — from regulated fintech platforms to
-            consumer apps used by hundreds of thousands of people.
+            Amrit Family Rasoi is North Indian Restaurant where the rich flavors cuisine meet the warmth of homemade food. We serve delicious,
+            freshly prepared meals made with quality ingredients, aromatic spices, and traditional 
+            recipes. From flavorful curries and creamy paneer dishes to freshly made rotis, naan, dal, and
+            wholesome thalis, every dish is prepared with love and care.
           </p>
         </div>
 
@@ -498,10 +569,9 @@ function Contact() {
 
             <ul className="mt-10 space-y-5">
               {[
-                { icon: Mail, label: "Email", value: "hello@dic-solutions.com" },
-                { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-                { icon: MapPin, label: "Office", value: "Sector V, Salt Lake, Kolkata, India" },
-                { icon: Clock, label: "Hours", value: "Mon–Sat, 9:00 AM – 7:00 PM IST" },
+                { icon: Mail, label: "Email", value: "digitalinnovationcenter@gmail.com" },
+                { icon: MapPin, label: "Office", value: "Delhi,India" },
+                { icon: Clock, label: "Hours", value: "Mon–Fri, 9:00 AM – 5:00 PM IST" },
               ].map(({ icon: Icon, label, value }) => (
                 <li key={label} className="flex items-start gap-4">
                   <span className="inline-flex rounded-xl bg-primary/10 p-3 text-primary">
@@ -529,7 +599,7 @@ function Contact() {
                 </h3>
                 <p className="mt-2 max-w-sm text-sm text-muted-foreground">
                   Our team will reach out within one business day. Want to talk
-                  sooner? Call us at +91 98765 43210.
+                  sooner? Email at digitalinnovationcenter@gmail.com
                 </p>
                 <button
                   type="button"
@@ -625,11 +695,7 @@ function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 text-center sm:px-6 md:flex-row md:justify-between md:text-left">
         <a href="#home" className="flex flex-col items-center gap-3 md:flex-row">
-          <img src={dicMark} alt="DIC logo" width={760} height={760} className="h-14 w-14" />
-          <div>
-            <p className="font-display font-bold tracking-wide">DIGITAL INNOVATION CENTER</p>
-            <p className="text-sm text-muted-foreground italic">Ideas to Digital Reality</p>
-          </div>
+          <img src={dic_logo} alt="DIC logo" width={760} height={760} className="h-14 w-14" />
         </a>
         <nav className="flex flex-wrap justify-center gap-6 text-sm font-medium text-muted-foreground">
           {NAV_LINKS.map(({ label, href }) => (
