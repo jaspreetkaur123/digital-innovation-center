@@ -120,11 +120,11 @@ const VALUES = [
 
 const PROJECTS = [
   {
-    image: portfolioFintech,
-    title: "FinSight Analytics Platform",
-    category: "Fintech · Web Platform",
-    text: "Real-time trading analytics dashboard processing 2M+ daily events for a brokerage firm.",
-    tags: ["React", "Data Viz", "WebSockets"],
+    image: restaurantAsset.url,
+    title: "Amrit Family Rasoi — Restaurant Website",
+    category: "Restaurants · Web Platform",
+    text: "A warm, appetizing online home for a family restaurant — menu, story and reservations, all in one place.",
+    tags: ["React", "Web Design", "Restaurants"],
   },
   {
     image: portfolioHealth,
