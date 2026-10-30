@@ -427,8 +427,8 @@ function Portfolio() {
             Work we're proud of
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A selection of recent engagements — from regulated fintech platforms to
-            consumer apps used by hundreds of thousands of people.
+            A selection of recent engagements — from restaurant and retail
+            platforms to consumer apps used by hundreds of thousands of people.
           </p>
         </div>
 
