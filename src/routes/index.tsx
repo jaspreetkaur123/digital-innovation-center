@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import dicMark from "@/assets/dic-mark.png";
 import amritRasoiCard from "@/assets/amrit-rasoi-card.png.asset.json";
+import restaurantWebsite from "@/assets/restaurant-website.jpg.asset.json";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
 import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
 import portfolioCloud from "@/assets/portfolio-cloud.jpg";
@@ -127,6 +128,13 @@ const PROJECTS = [
     category: "Hospitality · Web Platform",
     text: "Pure-veg family restaurant website with an online menu, gallery and table booking — built end to end, from brand to launch.",
     tags: ["React", "Menu & Gallery", "Reservations"],
+  },
+  {
+    image: restaurantWebsite.url,
+    title: "Restaurant Website",
+    category: "Restaurants · Web Design",
+    text: "A warm, full-featured restaurant website with featured dishes, menu, gallery, opening hours and contact — designed to bring families through the door.",
+    tags: ["Online Menu", "Gallery", "Mobile Friendly"],
   },
   {
     image: portfolioHealth,
