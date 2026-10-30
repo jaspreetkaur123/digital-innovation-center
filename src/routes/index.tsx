@@ -21,7 +21,7 @@ import {
   Zap,
 } from "lucide-react";
 import dicMark from "@/assets/dic-mark.png";
-import portfolioFintech from "@/assets/portfolio-fintech.jpg";
+import amritRasoiCard from "@/assets/amrit-rasoi-card.png.asset.json";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
 import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
 import portfolioCloud from "@/assets/portfolio-cloud.jpg";
@@ -122,11 +122,11 @@ const VALUES = [
 
 const PROJECTS = [
   {
-    image: portfolioFintech,
-    title: "FinSight Analytics Platform",
-    category: "Fintech · Web Platform",
-    text: "Real-time trading analytics dashboard processing 2M+ daily events for a brokerage firm.",
-    tags: ["React", "Data Viz", "WebSockets"],
+    image: amritRasoiCard.url,
+    title: "Amrit Family Rasoi",
+    category: "Hospitality · Web Platform",
+    text: "Pure-veg family restaurant website with an online menu, gallery and table booking — built end to end, from brand to launch.",
+    tags: ["React", "Menu & Gallery", "Reservations"],
   },
   {
     image: portfolioHealth,
