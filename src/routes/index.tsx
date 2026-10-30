@@ -21,11 +21,8 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import dic_logo from "@/assets/dic.png";
-import aiToolsImage from "@/assets/Ai_tools.png";
-import digitalPresenceImage from "@/assets/digi_presence.png";
-import mobileAppImage from "@/assets/mobile_app.png";
-import portfolioFintech from "@/assets/portfolio-AFR.png";
+import dicMark from "@/assets/dic-mark.png";
+import portfolioFintech from "@/assets/portfolio-fintech.jpg";
 import portfolioHealth from "@/assets/portfolio-health.jpg";
 import portfolioEcommerce from "@/assets/portfolio-ecommerce.jpg";
 import portfolioCloud from "@/assets/portfolio-cloud.jpg";
@@ -121,7 +118,7 @@ const VALUES = [
 
 const PROJECTS = [
   {
-    // image: Amrit,
+    image: portfolioFintech,
     title: "FinSight Analytics Platform",
     category: "Fintech · Web Platform",
     text: "Real-time trading analytics dashboard processing 2M+ daily events for a brokerage firm.",
@@ -496,10 +493,8 @@ function Portfolio() {
             Work we're proud of
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Amrit Family Rasoi is North Indian Restaurant where the rich flavors cuisine meet the warmth of homemade food. We serve delicious,
-            freshly prepared meals made with quality ingredients, aromatic spices, and traditional 
-            recipes. From flavorful curries and creamy paneer dishes to freshly made rotis, naan, dal, and
-            wholesome thalis, every dish is prepared with love and care.
+            A selection of recent engagements — from regulated fintech platforms to
+            consumer apps used by hundreds of thousands of people.
           </p>
         </div>
 
