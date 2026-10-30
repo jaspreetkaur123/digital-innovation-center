@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
         content:
           "Digital Innovation Center is a full-service IT solutions company building web platforms, mobile apps, cloud systems and AI-driven products. Ideas to Digital Reality.",
       },
-      { property: "og:title", content: "Digital Innovation Center (DIC) | IT Solutions" },
+      { property: "og:title", content: "Digital Innovation Center | IT Solutions" },
       {
         property: "og:description",
         content:
@@ -218,7 +218,7 @@ function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#home" className="flex items-center gap-3">
-          <img src={dic_logo} alt="DIC logo" className="h-10 w-10" width={40} height={40} />
+          <img src={dic_logo} alt="DIC logo" className="h-15 w-25" width={40} height={40}  />
           <span className="hidden flex-col leading-tight sm:flex">
             <span className="font-display text-sm font-bold tracking-wide">
               DIGITAL INNOVATION CENTER
@@ -234,7 +234,7 @@ function Header() {
             <a
               key={href}
               href={href}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+              className={`rounded-full px-4 py-4 text-sm font-medium transition-colors ${
                 active === href.slice(1)
                   ? "bg-primary/10 text-primary"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -310,7 +310,7 @@ function Hero() {
 
   return (
     <section id="home" className="brand-glow relative scroll-mt-16 overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-stretch">
         <div className="reveal is-visible">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
             IT Solutions Company
@@ -318,7 +318,7 @@ function Hero() {
           <h1 className="mt-5 font-display text-4xl leading-tight font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Ideas to <span className="text-gradient">Digital Reality</span>
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+          <p className="mt-5 max-w-l text-lg text-muted-foreground">
             Digital Innovation Center designs, builds and runs the technology
             behind ambitious businesses — web platforms, mobile apps, cloud
             infrastructure and AI-driven products, delivered end to end.
@@ -326,7 +326,7 @@ function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#portfolio"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:scale-[1.03] hover:bg-primary/90"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-6 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:scale-[1.03] hover:bg-primary/90"
             >
               View Our Work
               <ArrowRight className="h-4 w-4" />
@@ -356,7 +356,7 @@ function Hero() {
           </dl>
         </div>
 
-        <div className="reveal is-visible relative flex justify-center">
+        <div className="reveal is-visible relative flex justify-center lg:items-start lg:pt-12">
           <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-br from-primary/15 via-secondary/15 to-accent/15 blur-3xl" />
           <div
             className="relative w-full max-w-xl"
@@ -376,9 +376,7 @@ function Hero() {
               <img
                 src={currentSlide.src}
                 alt={currentSlide.alt}
-                width={1366}
-                height={1366}
-                className="aspect-video w-full object-contain"
+                className="block h-auto w-full object-contain"
               />
             </div>
             <button
