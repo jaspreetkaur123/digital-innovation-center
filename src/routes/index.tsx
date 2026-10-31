@@ -431,10 +431,8 @@ function About() {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Founded in 2020, Digital Innovation Center is a full-service IT solutions
-            company. We take products from a one-line idea to production reality —
-            strategy, design, engineering and operations under one roof. Our
-            multidisciplinary team has shipped solutions for fintech, healthcare,
-            retail and enterprise clients across the globe.
+            company. Solutions  have shipped for Restaurant web app, healthcare mobile app
+            with happy clients.
           </p>
         </div>
 
@@ -459,7 +457,7 @@ function About() {
               What we do
             </h3>
             <p className="mt-2 max-w-2xl text-muted-foreground">
-              Six practices, one accountable team — cover the full lifecycle of your
+              Five practices, are covered the full lifecycle of your
               digital products.
             </p>
           </div>
@@ -495,8 +493,8 @@ function Portfolio() {
             Work we're proud of
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A selection of recent engagements — from regulated fintech platforms to
-            consumer apps used by hundreds of thousands of people.
+            Designed and Developed North Indian Restaurant web app and MediConnect Telehealth App
+ and delivered to customers with 100% customer satisfaction.
           </p>
         </div>
 
